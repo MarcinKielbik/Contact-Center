@@ -10,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrl: './contact-details-step.scss',
 })
 export class ContactDetailsStep {
-  
+
   submitted = false;
 
   form = new FormGroup({
@@ -36,26 +36,31 @@ export class ContactDetailsStep {
     });
   }
 
+
+
   next() {
     this.submitted = true;
 
     if (this.form.invalid) {
+      this.form.markAllAsTouched();
       return;
     }
 
-    const { name, email } = this.form.getRawValue();
-
-    this.store.setDetails(name, email);
+    this.store.setDetails(
+      this.form.value.name!,
+      this.form.value.email!
+    );
 
     this.router.navigate(['/contacts/new/message']);
   }
 
-  // helpery do template
   get name() {
-    return this.form.controls.name;
+    return this.form.get('name')!;
   }
 
   get email() {
-    return this.form.controls.email;
+    return this.form.get('email')!;
   }
+
+
 }

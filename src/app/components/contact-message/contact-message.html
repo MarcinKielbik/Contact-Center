@@ -1,27 +1,30 @@
 <h2>Message</h2>
 
 <form [formGroup]="form">
-
+    <!-- 
   <textarea
     formControlName="message"
     placeholder="Enter message (optional)"
     matInput
-  ></textarea>
+  ></textarea> -->
 
-  <!-- COUNTER -->
-  <div>
-    {{ length }} / 500
-  </div>
+    <mat-form-field class="full-width">
+        <mat-label>Enter message (optional)</mat-label>
+        <textarea formControlName="message" matInput placeholder="Enter message (optional)"></textarea>
+    </mat-form-field>
 
-  <!-- BUTTONS -->
-  <div style="margin-top: 10px;">
-    <button type="button" (click)="back()">
-      Back
-    </button>
+    <div>
+        {{ length }} / 500
+    </div>
 
-    <button type="button" (click)="submit()">
-      Submit
-    </button>
-  </div>
+    <div class="buttons">
+        <button class="backBtn" matButton="filled" type="button" (click)="back()">
+            Back
+        </button>
+
+        <button matButton="filled" type="button" (click)="submit()">
+            Submit
+        </button>
+    </div>
 
 </form>
