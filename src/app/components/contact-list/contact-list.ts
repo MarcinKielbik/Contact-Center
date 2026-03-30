@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContactsStore } from '../../core/contacts-store';
 
 @Component({
   selector: 'app-contact-list',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './contact-list.html',
   styleUrl: './contact-list.scss',
 })
-export class ContactList {}
+export class ContactList {
+   constructor(
+    public store: ContactsStore,
+  ) {}
+}

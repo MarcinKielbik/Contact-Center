@@ -1,1 +1,35 @@
-<p>contact-list works!</p>
+<div *ngIf="store.contacts().length === 0">
+    <h2>No contacts</h2>
+    <p>Add new contact!</p>
+</div>
+
+<div *ngIf="store.contacts().length > 0">
+    <h2>Contact list</h2>
+
+</div>
+
+<!-- <ul> -->
+
+    <div class="list" *ngFor="let contact of store.contacts()">
+        <div>
+            <div>
+                <strong>{{ contact.name }}</strong>
+            </div>
+
+            <div>
+                {{ contact.email }}
+            </div>
+
+            <small>
+                {{ contact.createdAt | date:'short' }}
+            </small>
+        </div>
+
+
+
+        <button mat-button [routerLink]="['/contacts', contact.id]">
+            Details
+        </button>
+
+    </div>
+<!-- </ul> -->

@@ -1,1 +1,35 @@
-<p>contact-detail works!</p>
+<div class="title">
+<button matIconButton routerLink="/contacts">
+    <mat-icon>arrow_back</mat-icon>
+</button>
+<h2>Contact Details</h2>
+</div>
+
+
+<div *ngIf="contact; else notFound" class="card">
+
+  <p>
+    <strong>Name:</strong>
+    {{ contact.name }}
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    {{ contact.email }}
+  </p>
+
+  <p *ngIf="contact.message">
+    <strong>Message:</strong>
+    {{ contact.message }}
+  </p>
+
+  <p>
+    <strong>Created at:</strong>
+    {{ contact.createdAt | date:'medium' }}
+  </p>
+
+</div>
+
+<ng-template #notFound>
+  <p>Contact not found</p>
+</ng-template>

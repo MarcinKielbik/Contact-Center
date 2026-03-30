@@ -1,1 +1,35 @@
-<h2>Contact Details</h2>
+<h2>Add New Contact</h2>
+
+<form [formGroup]="form">
+
+
+  <mat-form-field class="name-form" appearance="outline" class="full-width">
+    <mat-label>Name</mat-label>
+
+    <input matInput formControlName="name" />
+
+    <mat-error *ngIf="name.hasError('required') && name.touched">
+      Name is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+
+    <input matInput formControlName="email" />
+
+    <mat-error *ngIf="email.hasError('required') && email.touched">
+      Email is required
+    </mat-error>
+
+    <mat-error *ngIf="email.hasError('email') && email.touched">
+      Invalid email
+    </mat-error>
+
+  </mat-form-field>
+
+
+  <button matButton="filled" type="button" (click)="next()">
+    Next
+  </button>
+</form>

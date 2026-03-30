@@ -11,6 +11,11 @@ import { ContactDetailsStep } from './components/contact-details-step/contact-de
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -25,8 +30,13 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule, 
     AppRoutingModule, 
     MatToolbarModule,
-    MatButtonModule
-  ],
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
+   ],
   providers: [provideBrowserGlobalErrorListeners(), provideClientHydration(withEventReplay())],
   bootstrap: [App],
 })
