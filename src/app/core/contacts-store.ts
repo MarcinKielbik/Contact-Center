@@ -48,6 +48,4 @@ export class ContactsStore {
   getById(id: string) {
     return this._contacts().find(c => c.id === id);
   }
-
-
 }

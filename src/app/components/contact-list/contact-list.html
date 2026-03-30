@@ -1,14 +1,9 @@
+<h2>Contact list</h2>
+
+
 <div *ngIf="store.contacts().length === 0">
-    <h2>No contacts</h2>
-    <p>Add new contact!</p>
+    <h3>Contact list empty. Add new contact!</h3>
 </div>
-
-<div *ngIf="store.contacts().length > 0">
-    <h2>Contact list</h2>
-
-</div>
-
-<!-- <ul> -->
 
     <div class="list" *ngFor="let contact of store.contacts()">
         <div>
@@ -32,4 +27,3 @@
         </button>
 
     </div>
-<!-- </ul> -->
