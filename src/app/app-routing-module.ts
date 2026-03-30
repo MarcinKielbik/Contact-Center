@@ -6,23 +6,31 @@ import { ContactMessage } from './components/contact-message/contact-message';
 import { ContactDetailsStep } from './components/contact-details-step/contact-details-step';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ContactList
-  },
 
   {
-    path: 'new/details',
-    component: ContactDetailsStep
-  },
-  {
-    path: 'new/message',
-    component: ContactMessage
-  },
-  {
-    path: ':id',
-    component: ContactDetail
+    path: 'contacts',
+    children: [
+      {
+        path: '',
+        component: ContactList
+      },
+
+      {
+        path: 'new/details',
+        component: ContactDetailsStep
+      },
+      {
+        path: 'new/message',
+        component: ContactMessage
+      },
+      {
+        path: ':id',
+        component: ContactDetail
+      }
+    ]
   }
+
+
 
 
 ];
