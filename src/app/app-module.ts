@@ -9,6 +9,9 @@ import { ContactMessage } from './components/contact-message/contact-message';
 import { ContactDetail } from './components/contact-detail/contact-detail';
 import { ContactDetailsStep } from './components/contact-details-step/contact-details-step';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     App,
@@ -18,7 +21,12 @@ import { ContactDetailsStep } from './components/contact-details-step/contact-de
     ContactDetail,
     ContactDetailsStep,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule, 
+    MatToolbarModule,
+    MatButtonModule
+  ],
   providers: [provideBrowserGlobalErrorListeners(), provideClientHydration(withEventReplay())],
   bootstrap: [App],
 })
