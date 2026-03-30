@@ -28,11 +28,12 @@ const routes: Routes = [
         component: ContactDetail
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: 'contacts',
+    pathMatch: 'full'
   }
-
-
-
-
 ];
 
 @NgModule({
